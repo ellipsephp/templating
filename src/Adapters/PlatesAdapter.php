@@ -17,6 +17,6 @@ class PlatesAdapter implements EngineInterface
 
     public function render($file, array $data = [])
     {
-        $this->plates->render($file, $data);
+        return $this->plates->render($file, $data);
     }
 }

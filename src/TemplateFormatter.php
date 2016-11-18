@@ -6,7 +6,7 @@ use Pmall\Formatting\FormatterInterface;
 
 use Zend\Diactoros\Response\HtmlResponse;
 
-class TemplateResolver implements FormatterInterface
+class TemplateFormatter implements FormatterInterface
 {
     private $engine;
 

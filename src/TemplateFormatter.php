@@ -20,7 +20,7 @@ class TemplateFormatter implements FormatterInterface
         return $something instanceof Template;
     }
 
-    public function getFormattedResponseFrom($expected_format, Template $template)
+    public function getFormattedResponseFrom($expected_format, $template)
     {
         if ($expected_format == 'text/html') {
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Pmall\Formatting\Formatters;
+namespace Pmall\Templating;
 
 use Pmall\Formatting\FormatterInterface;
 

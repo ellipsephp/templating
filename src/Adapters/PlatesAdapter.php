@@ -6,7 +6,7 @@ use League\Plates\Engine;
 
 use Pmall\Templating\EngineInterface;
 
-class PlatesAdapter extends EngineInterface
+class PlatesAdapter implements EngineInterface
 {
     private $plates;
 

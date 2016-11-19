@@ -11,7 +11,7 @@ use Twig_Loader_Filesystem;
 use Pmall\Templating\Adapters\PlatesAdapter;
 use Pmall\Templating\Adapters\TwigAdapter;
 
-class TemplateServiceProvider extends AbstractServiceProvider implements BootableServiceProviderInterface
+class TemplatesServiceProvider extends AbstractServiceProvider implements BootableServiceProviderInterface
 {
     const KEY_PLATES = 'plates';
     const KEY_TWIG = 'twig';

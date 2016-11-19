@@ -33,7 +33,7 @@ class TemplateServiceProvider extends AbstractServiceProvider implements Bootabl
 
             EngineFactory::register(static::KEY_PLATES, $this->config, function ($views_dir, $options) {
 
-                return new PlatesAdapter(new Plates($views_dir));
+                return new PlatesAdapter(new Plates($views_dir), $options);
 
             });
 

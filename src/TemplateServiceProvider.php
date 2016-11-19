@@ -54,7 +54,7 @@ class TemplateServiceProvider extends AbstractServiceProvider implements Bootabl
     {
         $this->getContainer()->share(EngineInterface::class, function () {
 
-            return EngineFactory::make($engine, $this->config);
+            return EngineFactory::make($this->config['engine'], $this->config);
 
         });
     }

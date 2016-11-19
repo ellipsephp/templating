@@ -11,12 +11,9 @@ class EngineFactory
         //
     }
 
-    public static function register($name, array $config, callable $factory)
+    public static function register($name, callable $factory)
     {
-        $views_dir = $config['views_dir'];
-        $options = $config['engines'][$name];
-
-        static::$factories[$name] = [$factory, $views_dir, $options];
+        static::$factories[$name] = $factory;
     }
 
     public static function has($name)
@@ -24,10 +21,14 @@ class EngineFactory
         return array_key_exists($name, static::$factories);
     }
 
-    public static function make($name)
+    public static function make($name, array $raw_config)
     {
-        list($factory, $views_dir, $options) = static::$factories[$name];
+        $factory = static::$factories[$name];
 
-        return $factory($views_dir, $options);
+        $global_config = array_diff_key($raw_config, ['engine' => '', 'engines' => '']);
+
+        $config = array_merge($global_config, $raw_config['engines'][$name]);
+
+        return $factory($config);
     }
 }

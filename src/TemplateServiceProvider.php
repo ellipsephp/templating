@@ -31,9 +31,9 @@ class TemplateServiceProvider extends AbstractServiceProvider implements Bootabl
     {
         if ($this->shouldregisterEngine(static::KEY_PLATES)) {
 
-            EngineFactory::register(static::KEY_PLATES, $this->config, function ($views_dir, $options) {
+            EngineFactory::register(static::KEY_PLATES, function ($config) {
 
-                return new PlatesAdapter(new Plates($views_dir), $options);
+                return new PlatesAdapter(new Plates($config['views_dir']), $config);
 
             });
 
@@ -41,9 +41,9 @@ class TemplateServiceProvider extends AbstractServiceProvider implements Bootabl
 
         if ($this->shouldregisterEngine(static::KEY_TWIG)) {
 
-            EngineFactory::register(static::KEY_TWIG, $this->config, function ($views_dir, $options) {
+            EngineFactory::register(static::KEY_TWIG, function ($config) {
 
-                return new TwigAdapter(new Twig_Loader_Filesystem($views_dir), $options);
+                return new TwigAdapter(new Twig_Loader_Filesystem($config['views_dir']), $config);
 
             });
 
@@ -54,9 +54,7 @@ class TemplateServiceProvider extends AbstractServiceProvider implements Bootabl
     {
         $this->getContainer()->share(EngineInterface::class, function () {
 
-            $engine = $this->config['engine'];
-
-            return EngineFactory::make($engine);
+            return EngineFactory::make($engine, $this->config);
 
         });
     }

@@ -26,9 +26,7 @@ class PlatesAdapter implements EngineInterface
     {
         if (array_key_exists('extension', $options)) {
 
-            $extension = $options['extension'] == '' ? null : $options['extension'];
-
-            $this->plates->setFileExtension($extension);
+            $this->plates->setFileExtension($options['extension']);
 
         }
     }

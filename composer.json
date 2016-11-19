@@ -13,7 +13,8 @@
         "pmall/core": "dev-master",
         "pmall/formatting": "dev-master",
         "zendframework/zend-diactoros": "^1.3",
-        "league/plates": "^3.1"
+        "league/plates": "^3.1",
+        "twig/twig": "^1.28"
     },
     "autoload": {
         "psr-4": {

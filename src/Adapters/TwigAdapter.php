@@ -11,11 +11,9 @@ class TwigAdapter implements EngineInterface
 {
     private $twig;
 
-    public function __construct(Twig_LoaderInterface $loader, $compiled_views_dir = null)
+    public function __construct(Twig_LoaderInterface $loader, array $options)
     {
-        $this->twig = new Twig_Environment($loader, [
-            'cache' => $compiled_views_dir,
-        ]);
+        $this->twig = new Twig_Environment($loader, $options);
     }
 
     public function render($file, array $data = [])

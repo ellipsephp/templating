@@ -6,15 +6,15 @@ class EngineFactory
 {
     private static $factories = [];
 
-    public static function register($name, callable $factory)
+    public static function register($name, array $config, callable $factory)
     {
-        static::$factories[$name] = $factory;
+        static::$factories[$name] = [$factory, $config];
     }
 
-    public static function make($name, $options)
+    public static function make($name)
     {
-        $factory = static::$factories[$name];
+        list($factory, $config) = static::$factories[$name];
 
-        return $factory($options);
+        return $factory($config);
     }
 }

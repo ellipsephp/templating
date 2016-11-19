@@ -3,6 +3,7 @@
 namespace Pmall\Templating;
 
 use League\Container\ServiceProvider\AbstractServiceProvider;
+use League\Container\ServiceProvider\BootableServiceProviderInterface;
 
 use League\Plates\Engine as Plates;
 use Twig_Loader_Filesystem;
@@ -10,7 +11,7 @@ use Twig_Loader_Filesystem;
 use Pmall\Templating\Adapters\PlatesAdapter;
 use Pmall\Templating\Adapters\TwigAdapter;
 
-class TemplateServiceProvider extends AbstractServiceProvider
+class TemplateServiceProvider extends AbstractServiceProvider implements BootableServiceProviderInterface
 {
     const KEY_PLATES = 'plates';
     const KEY_TWIG = 'twig';
@@ -18,7 +19,7 @@ class TemplateServiceProvider extends AbstractServiceProvider
     private $config;
 
     protected $provides = [
-        EngineInterface::class
+        EngineInterface::class,
     ];
 
     public function __construct(array $config)

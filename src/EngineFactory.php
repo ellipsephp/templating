@@ -25,10 +25,6 @@ class EngineFactory
     {
         $factory = static::$factories[$name];
 
-        $global_config = array_diff_key($raw_config, ['engine' => '', 'engines' => '']);
-
-        $config = array_merge($global_config, $raw_config['engines'][$name]);
-
         return $factory($config);
     }
 }

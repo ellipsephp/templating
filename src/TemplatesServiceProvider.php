@@ -33,7 +33,10 @@ class TemplatesServiceProvider extends AbstractServiceProvider implements Bootab
 
             EngineFactory::register(static::KEY_PLATES, function ($config) {
 
-                return new PlatesAdapter(new Plates($config['views_dir']), $config);
+                return new PlatesAdapter(new Plates(
+                    $config['views_dir'],
+                    $config['engines'][static::KEY_PLATES]['extension']
+                ));
 
             });
 
@@ -43,7 +46,10 @@ class TemplatesServiceProvider extends AbstractServiceProvider implements Bootab
 
             EngineFactory::register(static::KEY_TWIG, function ($config) {
 
-                return new TwigAdapter(new Twig_Loader_Filesystem($config['views_dir']), $config);
+                return new TwigAdapter(
+                    new Twig_Loader_Filesystem($config['views_dir']),
+                    $config['engines'][static::KEY_TWIG]
+                );
 
             });
 

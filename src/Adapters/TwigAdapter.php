@@ -11,9 +11,9 @@ class TwigAdapter implements EngineInterface
 {
     private $twig;
 
-    public function __construct(Twig_LoaderInterface $loader, array $options)
+    public function __construct(Twig_LoaderInterface $loader, array $twig_options)
     {
-        $this->twig = new Twig_Environment($loader, $options);
+        $this->twig = new Twig_Environment($loader, $twig_options);
     }
 
     public function render($file, array $data = [])

@@ -21,7 +21,7 @@ class EngineFactory
         return array_key_exists($name, static::$factories);
     }
 
-    public static function make($name, array $raw_config)
+    public static function make($name, array $config)
     {
         $factory = static::$factories[$name];
 

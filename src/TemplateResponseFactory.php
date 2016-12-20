@@ -11,7 +11,7 @@ class TemplateResponseFactory extends HtmlResponseFactory
         $this->engine = $engine;
     }
 
-    public function createResponse($code = 200, $file, array $data = [], array $headers = [])
+    public function createResponse($code = 200, $file = '', array $data = [], array $headers = [])
     {
         $html = $this->engine->render($file, $data);
 

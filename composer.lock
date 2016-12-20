@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a138a95618ea4bf09d9250e9ee41cdc9",
-    "content-hash": "1dc260330dd03b5d2449821187356583",
+    "hash": "c5383119ccda823ff5328b41260c11ab",
+    "content-hash": "700ce7deb60db52a7d47a3c1ce194fd3",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -33,58 +33,6 @@
             ],
             "description": "Promoting the interoperability of container objects (DIC, SL, etc.)",
             "time": "2014-12-30 15:22:37"
-        },
-        {
-            "name": "http-interop/http-middleware",
-            "version": "0.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/http-interop/http-middleware.git",
-                "reference": "ff545c87e97bf4d88f0cb7eb3e89f99aaa53d7a9"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/http-interop/http-middleware/zipball/ff545c87e97bf4d88f0cb7eb3e89f99aaa53d7a9",
-                "reference": "ff545c87e97bf4d88f0cb7eb3e89f99aaa53d7a9",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0",
-                "psr/http-message": "^1.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Interop\\Http\\Middleware\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "PHP-FIG",
-                    "homepage": "http://www.php-fig.org/"
-                }
-            ],
-            "description": "Common interface for HTTP middleware",
-            "keywords": [
-                "factory",
-                "http",
-                "middleware",
-                "psr",
-                "psr-17",
-                "psr-7",
-                "request",
-                "response"
-            ],
-            "time": "2016-09-25 13:30:27"
         },
         {
             "name": "league/container",
@@ -203,205 +151,17 @@
             "time": "2015-07-09 02:14:40"
         },
         {
-            "name": "mindplay/middleman",
-            "version": "2.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/mindplay-dk/middleman.git",
-                "reference": "03becb30c218fd99845109f507d12df5052da471"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/mindplay-dk/middleman/zipball/03becb30c218fd99845109f507d12df5052da471",
-                "reference": "03becb30c218fd99845109f507d12df5052da471",
-                "shasum": ""
-            },
-            "require": {
-                "container-interop/container-interop": "^1.1",
-                "http-interop/http-middleware": "^0.2",
-                "mindplay/readable": "^1",
-                "php": ">=5.4",
-                "psr/http-message": "~1.0"
-            },
-            "require-dev": {
-                "mindplay/testies": "^0.2.0",
-                "mockery/mockery": "^0.9.4",
-                "phpunit/php-code-coverage": "^2.2"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "mindplay\\middleman\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "LGPL-3.0+"
-            ],
-            "authors": [
-                {
-                    "name": "Rasmus Schultz",
-                    "email": "rasmus@mindplay.dk"
-                }
-            ],
-            "description": "PSR-7 middleware dispatcher. Let's stop trying to make this complicated.",
-            "time": "2016-09-29 07:43:04"
-        },
-        {
-            "name": "mindplay/readable",
-            "version": "1.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/mindplay-dk/readable.git",
-                "reference": "211a6afd951d3501d9e4495bcaf373659af79ade"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/mindplay-dk/readable/zipball/211a6afd951d3501d9e4495bcaf373659af79ade",
-                "reference": "211a6afd951d3501d9e4495bcaf373659af79ade",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.4"
-            },
-            "require-dev": {
-                "mindplay/testies": "dev-master",
-                "phpunit/php-code-coverage": ">=2, <4"
-            },
-            "type": "library",
-            "autoload": {
-                "classmap": [
-                    "src/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "Formats PHP values as human-readable strings",
-            "time": "2016-05-08 20:17:11"
-        },
-        {
-            "name": "pmall/core",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "../core",
-                "reference": "e0f61edb79e0400442708c6130ce88be8255ab4e"
-            },
-            "require": {
-                "container-interop/container-interop": "^1.1",
-                "http-interop/http-middleware": "^0.2.0",
-                "mindplay/middleman": "^2.0",
-                "mindplay/readable": "^1.0",
-                "psr/http-message": "^1.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Pmall\\Core\\": "src"
-                }
-            },
-            "authors": [
-                {
-                    "name": "pmall",
-                    "email": "pierre.mallinjoud@gmail.com"
-                }
-            ],
-            "description": "the core component of the pmall framework",
-            "time": "2016-11-10 19:23:22"
-        },
-        {
-            "name": "pmall/formatting",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "../formatting",
-                "reference": "5089d16ea31b07ca9e8ec8df4d8937e718b88602"
-            },
-            "require": {
-                "http-interop/http-middleware": "^0.2.0",
-                "pmall/core": "dev-master",
-                "psr/http-message": "^1.0",
-                "zendframework/zend-diactoros": "^1.3"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Pmall\\Formatting\\": "src"
-                }
-            },
-            "authors": [
-                {
-                    "name": "pmall",
-                    "email": "pierre.mallinjoud@gmail.com"
-                }
-            ],
-            "description": "the formatting component of the pmall framework",
-            "time": "2016-11-18 19:34:01"
-        },
-        {
-            "name": "psr/http-message",
-            "version": "1.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/php-fig/http-message.git",
-                "reference": "f6561bf28d520154e4b0ec72be95418abe6d9363"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/http-message/zipball/f6561bf28d520154e4b0ec72be95418abe6d9363",
-                "reference": "f6561bf28d520154e4b0ec72be95418abe6d9363",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Psr\\Http\\Message\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "PHP-FIG",
-                    "homepage": "http://www.php-fig.org/"
-                }
-            ],
-            "description": "Common interface for HTTP messages",
-            "homepage": "https://github.com/php-fig/http-message",
-            "keywords": [
-                "http",
-                "http-message",
-                "psr",
-                "psr-7",
-                "request",
-                "response"
-            ],
-            "time": "2016-08-06 14:39:51"
-        },
-        {
             "name": "twig/twig",
-            "version": "v1.28.1",
+            "version": "v1.29.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "fff80c4a7ae1d47a81dfec10c76cbcb939170b45"
+                "reference": "74f723e542368ca2080b252740be5f1113ebb898"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/fff80c4a7ae1d47a81dfec10c76cbcb939170b45",
-                "reference": "fff80c4a7ae1d47a81dfec10c76cbcb939170b45",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/74f723e542368ca2080b252740be5f1113ebb898",
+                "reference": "74f723e542368ca2080b252740be5f1113ebb898",
                 "shasum": ""
             },
             "require": {
@@ -409,12 +169,12 @@
             },
             "require-dev": {
                 "symfony/debug": "~2.7",
-                "symfony/phpunit-bridge": "~2.7"
+                "symfony/phpunit-bridge": "~3.2@dev"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.28-dev"
+                    "dev-master": "1.29-dev"
                 }
             },
             "autoload": {
@@ -449,66 +209,13 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2016-11-19 05:52:49"
-        },
-        {
-            "name": "zendframework/zend-diactoros",
-            "version": "1.3.7",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/zendframework/zend-diactoros.git",
-                "reference": "969ff423d3f201da3ff718a5831bb999bb0669b0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-diactoros/zipball/969ff423d3f201da3ff718a5831bb999bb0669b0",
-                "reference": "969ff423d3f201da3ff718a5831bb999bb0669b0",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^5.4 || ^7.0",
-                "psr/http-message": "~1.0"
-            },
-            "provide": {
-                "psr/http-message-implementation": "~1.0.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^4.6 || ^5.5",
-                "squizlabs/php_codesniffer": "^2.3.1"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.3-dev",
-                    "dev-develop": "1.4-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Zend\\Diactoros\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-2-Clause"
-            ],
-            "description": "PSR HTTP Message implementations",
-            "homepage": "https://github.com/zendframework/zend-diactoros",
-            "keywords": [
-                "http",
-                "psr",
-                "psr-7"
-            ],
-            "time": "2016-10-11 13:25:21"
+            "time": "2016-12-13 17:28:18"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "pmall/core": 20,
-        "pmall/formatting": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

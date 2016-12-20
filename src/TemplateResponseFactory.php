@@ -1,5 +1,7 @@
 <?php
 
+namespace Pmall\Templating;
+
 use Pmall\Http\Factories\HtmlResponseFactory;
 
 class TemplateResponseFactory extends HtmlResponseFactory

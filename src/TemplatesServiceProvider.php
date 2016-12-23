@@ -19,7 +19,7 @@ class TemplatesServiceProvider extends AbstractServiceProvider implements Bootab
     private $config;
 
     protected $provides = [
-        EngineInterface::class,
+        TemplateResponseFactory::class,
     ];
 
     public function __construct(array $config)
@@ -29,44 +29,33 @@ class TemplatesServiceProvider extends AbstractServiceProvider implements Bootab
 
     public function boot()
     {
-        if ($this->shouldregisterEngine(static::KEY_PLATES)) {
+        EngineFactory::register(static::KEY_PLATES, function ($config) {
 
-            EngineFactory::register(static::KEY_PLATES, function ($config) {
+            return new PlatesAdapter(new Plates(
+                $config['views_dir'],
+                $config['engines'][static::KEY_PLATES]['extension']
+            ));
 
-                return new PlatesAdapter(new Plates(
-                    $config['views_dir'],
-                    $config['engines'][static::KEY_PLATES]['extension']
-                ));
+        });
 
-            });
+        EngineFactory::register(static::KEY_TWIG, function ($config) {
 
-        }
-
-        if ($this->shouldregisterEngine(static::KEY_TWIG)) {
-
-            EngineFactory::register(static::KEY_TWIG, function ($config) {
-
-                return new TwigAdapter(
-                    new Twig_Loader_Filesystem($config['views_dir']),
-                    $config['engines'][static::KEY_TWIG]
-                );
-
-            });
+            return new TwigAdapter(
+                new Twig_Loader_Filesystem($config['views_dir']),
+                $config['engines'][static::KEY_TWIG]
+            );
 
         }
     }
 
     public function register()
     {
-        $this->getContainer()->share(EngineInterface::class, function () {
+        $this->getContainer()->share(TemplateResponseFactory::class, function () {
 
-            return EngineFactory::make($this->config['engine'], $this->config);
+            $engine = EngineFactory::make($this->config['engine'], $this->config);
+
+            return new TemplateResponseFactory($engine);
 
         });
-    }
-
-    private function shouldregisterEngine($engine)
-    {
-        return $this->config['engine'] == $engine and ! EngineFactory::has($engine);
     }
 }

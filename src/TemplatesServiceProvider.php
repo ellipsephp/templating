@@ -45,7 +45,7 @@ class TemplatesServiceProvider extends AbstractServiceProvider implements Bootab
                 $config['engines'][static::KEY_TWIG]
             );
 
-        }
+        });
     }
 
     public function register()

@@ -17,7 +17,7 @@ class TemplateResponseFactory extends HtmlResponseFactory
 
     public function set($key, $value)
     {
-        $this->default[$key] = $value;
+        $this->defaults[$key] = $value;
     }
 
     public function createResponse($code = 200, $file = '', array $data = [], array $headers = [])

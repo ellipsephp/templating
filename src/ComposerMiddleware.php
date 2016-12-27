@@ -25,7 +25,7 @@ class ComposerMiddleware implements ServerMiddlewareInterface
      * @param \Psr\Http\Message\DelegateInterface       $delegate   the next middleware to execute.
      * @return \Psr\Http\Message\ResponseInterface
      */
-    public function process()
+    public function process(ServerRequestInterface $request, DelegateInterface $delegate)
     {
         return $this->__invoke($request, $delegate);
     }

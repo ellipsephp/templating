@@ -2,6 +2,8 @@
 
 namespace Pmall\Templating;
 
+use Interop\Container\ContainerInterface;
+
 use Pmall\Core\ResolverInterface;
 
 class ComposerResolver implements ResolverInterface

@@ -7,15 +7,15 @@ use Psr\Http\Message\ServerRequestInterface;
 use Interop\Http\Middleware\ServerMiddlewareInterface;
 use Interop\Http\Middleware\DelegateInterface;
 
-abstract class Composer implements ServerMiddlewareInterface
+class ComposerMiddleware implements ServerMiddlewareInterface
 {
     private $factory;
+    private $composer;
 
-    abstract protected function getDefault();
-
-    public function __construct(TemplateResponseFactory $factory)
+    public function __construct(TemplateResponseFactory $factory, ComposerInterface $composer)
     {
         $this->factory = $factory;
+        $this->composer = $composer;
     }
 
     /**
@@ -39,7 +39,7 @@ abstract class Composer implements ServerMiddlewareInterface
      */
     public function __invoke(ServerRequestInterface $request, DelegateInterface $delegate)
     {
-        $defaults = $this->getDefaults();
+        $defaults = $this->composer->getDefaults($request);
 
         foreach ($defaults as $key => $value) {
 

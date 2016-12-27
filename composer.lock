@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c78df70e3a99f493aa98da1bfa9700d3",
-    "content-hash": "306ee8752bf618cf8d29d3f66505f1a6",
+    "hash": "bb3a1d77ff4e46f0d1135cb336486fdc",
+    "content-hash": "f8ade1118a999f3077d920ea371118e7",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -206,6 +206,115 @@
             "time": "2016-12-27 17:23:53"
         },
         {
+            "name": "mindplay/middleman",
+            "version": "2.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mindplay-dk/middleman.git",
+                "reference": "712098b23e00dcbf9ca93c4416e178388796da15"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mindplay-dk/middleman/zipball/712098b23e00dcbf9ca93c4416e178388796da15",
+                "reference": "712098b23e00dcbf9ca93c4416e178388796da15",
+                "shasum": ""
+            },
+            "require": {
+                "container-interop/container-interop": "^1.1",
+                "http-interop/http-middleware": "=0.2",
+                "mindplay/readable": "^1",
+                "php": ">=5.4",
+                "psr/http-message": "~1.0"
+            },
+            "require-dev": {
+                "mindplay/testies": "^0.2.0",
+                "mockery/mockery": "^0.9.4",
+                "phpunit/php-code-coverage": "^2.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "mindplay\\middleman\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Rasmus Schultz",
+                    "email": "rasmus@mindplay.dk"
+                }
+            ],
+            "description": "PSR-7 middleware dispatcher. Let's stop trying to make this complicated.",
+            "time": "2016-11-21 08:14:23"
+        },
+        {
+            "name": "mindplay/readable",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mindplay-dk/readable.git",
+                "reference": "27fdf89a542330939d956e706dcb366d92fd599b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mindplay-dk/readable/zipball/27fdf89a542330939d956e706dcb366d92fd599b",
+                "reference": "27fdf89a542330939d956e706dcb366d92fd599b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4"
+            },
+            "require-dev": {
+                "mindplay/testies": "dev-master",
+                "phpunit/php-code-coverage": ">=2, <4"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Formats PHP values as human-readable strings",
+            "time": "2016-12-22 15:39:41"
+        },
+        {
+            "name": "pmall/core",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "../core",
+                "reference": "71929712e7da99e3ff8354158fc555df78ee97c3"
+            },
+            "require": {
+                "container-interop/container-interop": "^1.1",
+                "http-interop/http-middleware": "=0.2.0",
+                "mindplay/middleman": "^2.0",
+                "mindplay/readable": "^1.0",
+                "psr/http-message": "^1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Pmall\\Core\\": "src"
+                }
+            },
+            "authors": [
+                {
+                    "name": "pmall",
+                    "email": "pierre.mallinjoud@gmail.com"
+                }
+            ],
+            "description": "the core component of the pmall framework",
+            "time": "2016-12-01 22:04:32"
+        },
+        {
             "name": "psr/http-message",
             "version": "1.0.1",
             "source": {
@@ -320,7 +429,9 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "pmall/core": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

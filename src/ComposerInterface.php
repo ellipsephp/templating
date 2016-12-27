@@ -6,5 +6,5 @@ use Psr\Http\Message\ServerRequestInterface;
 
 interface ComposerInterface
 {
-    public function getDefaults(ServerMiddlewareInterface $request);
+    public function getDefaults(ServerRequestInterface $request);
 }

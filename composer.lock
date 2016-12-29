@@ -152,16 +152,16 @@
         },
         {
             "name": "league/plates",
-            "version": "3.2.0",
+            "version": "3.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/plates.git",
-                "reference": "30e0671eb47527557a51a83163e31b5722e8ab75"
+                "reference": "b1684b6f127714497a0ef927ce42c0b44b45a8af"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/plates/zipball/30e0671eb47527557a51a83163e31b5722e8ab75",
-                "reference": "30e0671eb47527557a51a83163e31b5722e8ab75",
+                "url": "https://api.github.com/repos/thephpleague/plates/zipball/b1684b6f127714497a0ef927ce42c0b44b45a8af",
+                "reference": "b1684b6f127714497a0ef927ce42c0b44b45a8af",
                 "shasum": ""
             },
             "require": {
@@ -203,7 +203,7 @@
                 "templating",
                 "views"
             ],
-            "time": "2016-12-27 17:23:53"
+            "time": "2016-12-28 00:14:17"
         },
         {
             "name": "mindplay/middleman",
@@ -290,7 +290,7 @@
             "source": {
                 "type": "git",
                 "url": "../core",
-                "reference": "71929712e7da99e3ff8354158fc555df78ee97c3"
+                "reference": "9709876861f319ea2a35f46e757ce091dad565b5"
             },
             "require": {
                 "container-interop/container-interop": "^1.1",
@@ -312,7 +312,7 @@
                 }
             ],
             "description": "the core component of the pmall framework",
-            "time": "2016-12-01 22:04:32"
+            "time": "2016-12-29 22:15:12"
         },
         {
             "name": "psr/http-message",

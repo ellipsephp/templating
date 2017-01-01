@@ -49,7 +49,7 @@ class TemplatingServiceProvider implements ServiceProvider
 
                 return new TemplateResponseFactory($engine);
 
-            }
+            },
         ];
     }
 }

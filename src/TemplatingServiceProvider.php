@@ -17,10 +17,6 @@ class TemplatingServiceProvider implements ServiceProvider
 
     private $config;
 
-    protected $provides = [
-        TemplateResponseFactory::class,
-    ];
-
     public function __construct(array $config)
     {
         $this->config = $config;

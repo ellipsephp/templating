@@ -27,7 +27,7 @@ class ComposerMiddleware implements ServerMiddlewareInterface
      */
     public function process(ServerRequestInterface $request, DelegateInterface $delegate)
     {
-        return $this->__invoke($request, $delegate);
+        return $this($request, $delegate);
     }
 
     /**

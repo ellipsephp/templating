@@ -2,8 +2,7 @@
 
 namespace Pmall\Templating;
 
-use League\Container\ServiceProvider\AbstractServiceProvider;
-use League\Container\ServiceProvider\BootableServiceProviderInterface;
+use Interop\Container\ServiceProvider;
 
 use League\Plates\Engine as Plates;
 use Twig_Loader_Filesystem;
@@ -11,7 +10,7 @@ use Twig_Loader_Filesystem;
 use Pmall\Templating\Adapters\PlatesAdapter;
 use Pmall\Templating\Adapters\TwigAdapter;
 
-class TemplatesServiceProvider extends AbstractServiceProvider implements BootableServiceProviderInterface
+class TemplatingServiceProvider implements ServiceProvider
 {
     const KEY_PLATES = 'plates';
     const KEY_TWIG = 'twig';
@@ -27,7 +26,7 @@ class TemplatesServiceProvider extends AbstractServiceProvider implements Bootab
         $this->config = $config;
     }
 
-    public function boot()
+    public function getServices()
     {
         EngineFactory::register(static::KEY_PLATES, function ($config) {
 
@@ -41,21 +40,20 @@ class TemplatesServiceProvider extends AbstractServiceProvider implements Bootab
         EngineFactory::register(static::KEY_TWIG, function ($config) {
 
             return new TwigAdapter(
-                new Twig_Loader_Filesystem($config['views_dir']),
+                new Twig_Loader_Filesyste($config['views_dir']),
                 $config['engines'][static::KEY_TWIG]
             );
 
         });
-    }
 
-    public function register()
-    {
-        $this->getContainer()->share(TemplateResponseFactory::class, function () {
+        return [
+            TemplateResponseFactory::class => function () {
 
-            $engine = EngineFactory::make($this->config['engine'], $this->config);
+                $engine = EngineFactory::make($this->config['engine'], $this->config);
 
-            return new TemplateResponseFactory($engine);
+                return new TemplateResponseFactory($engine);
 
-        });
+            }
+        ];
     }
 }

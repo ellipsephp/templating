@@ -4,8 +4,8 @@ namespace Pmall\Templating;
 
 use Psr\Http\Message\ServerRequestInterface;
 
-use Interop\Http\Middleware\MiddlewareInterface;
-use Interop\Http\Middleware\DelegateInterface;
+use Interop\Http\ServerMiddleware\MiddlewareInterface;
+use Interop\Http\ServerMiddleware\DelegateInterface;
 
 class ComposerMiddleware implements MiddlewareInterface
 {

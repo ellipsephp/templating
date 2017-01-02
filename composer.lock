@@ -212,7 +212,7 @@
             "source": {
                 "type": "git",
                 "url": "../core",
-                "reference": "d14ad5e7cf33f0c46430381db92aaec2838576ae"
+                "reference": "6582624e37412663fe19dc5008af078e5fac512d"
             },
             "require": {
                 "container-interop/container-interop": "^1.1",
@@ -233,7 +233,7 @@
                 }
             ],
             "description": "the core component of the pmall framework",
-            "time": "2017-01-02 17:43:28"
+            "time": "2017-01-02 17:58:42"
         },
         {
             "name": "psr/http-message",

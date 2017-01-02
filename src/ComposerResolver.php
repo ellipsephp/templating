@@ -50,7 +50,7 @@ class ComposerResolver implements ResolverInterface
      * Resolve the middleware from the composer.
      *
      * @param mixed $composer the composer to resolve.
-     * @return callable
+     * @return \Pmall\Templating\ComposerMiddleware
      */
     public function getMiddleware($composer)
     {

@@ -4,7 +4,7 @@ namespace Pmall\Templating;
 
 use Interop\Container\ContainerInterface;
 
-use Pmall\Core\ResolverInterface;
+use Pmall\Resolver\ResolverInterface;
 
 class ComposerResolver implements ResolverInterface
 {

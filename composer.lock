@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "0eccb1513578e603441ce5c9e2be0cc2",
-    "content-hash": "de443d7716f6836a8eae085acedb32e2",
+    "hash": "0975b2e373af1277c1d1d8b0d83c9186",
+    "content-hash": "46777c622fb2d3d1a30c5243241b0ca1",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -173,57 +173,17 @@
             "time": "2016-12-28 00:14:17"
         },
         {
-            "name": "mindplay/readable",
-            "version": "1.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/mindplay-dk/readable.git",
-                "reference": "27fdf89a542330939d956e706dcb366d92fd599b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/mindplay-dk/readable/zipball/27fdf89a542330939d956e706dcb366d92fd599b",
-                "reference": "27fdf89a542330939d956e706dcb366d92fd599b",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.4"
-            },
-            "require-dev": {
-                "mindplay/testies": "dev-master",
-                "phpunit/php-code-coverage": ">=2, <4"
-            },
-            "type": "library",
-            "autoload": {
-                "classmap": [
-                    "src/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "Formats PHP values as human-readable strings",
-            "time": "2016-12-22 15:39:41"
-        },
-        {
-            "name": "pmall/core",
+            "name": "pmall/resolver",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "../core",
-                "reference": "6582624e37412663fe19dc5008af078e5fac512d"
-            },
-            "require": {
-                "container-interop/container-interop": "^1.1",
-                "http-interop/http-middleware": "^0.4.0",
-                "mindplay/readable": "^1.0",
-                "psr/http-message": "^1.0"
+                "url": "../resolver",
+                "reference": "955ff19e00726f647832f38ef7a2a99d4cacb43e"
             },
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "Pmall\\Core\\": "src"
+                    "Pmall\\Resolver\\": "src"
                 }
             },
             "authors": [
@@ -232,8 +192,8 @@
                     "email": "pierre.mallinjoud@gmail.com"
                 }
             ],
-            "description": "the core component of the pmall framework",
-            "time": "2017-01-02 17:58:42"
+            "description": "the resolver interface of the pmall framework",
+            "time": "2017-01-02 18:27:10"
         },
         {
             "name": "psr/http-message",
@@ -351,7 +311,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "pmall/core": 20
+        "pmall/resolver": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

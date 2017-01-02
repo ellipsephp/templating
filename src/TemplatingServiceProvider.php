@@ -43,6 +43,11 @@ class TemplatingServiceProvider implements ServiceProvider
         });
 
         return [
+            ComposerResolver::class => function ($container) {
+
+                return new ComposerResolver($container, $container->get(TemplateResponseFactory::class));
+
+            },
             TemplateResponseFactory::class => function () {
 
                 $engine = EngineFactory::make($this->config['engine'], $this->config);

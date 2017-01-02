@@ -6,7 +6,7 @@ use Interop\Container\ContainerInterface;
 
 use Pmall\Resolver\AbstractResolver;
 
-class ComposerResolver implements AbstractResolver
+class ComposerResolver extends AbstractResolver
 {
     /**
      * The application container.

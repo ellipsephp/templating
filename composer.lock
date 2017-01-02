@@ -212,7 +212,7 @@
             "source": {
                 "type": "git",
                 "url": "../resolver",
-                "reference": "27cf9217f158cb5b5cc0f5265b883a59615da3d6"
+                "reference": "fb28af58fad12f1a5e8ef6142bb3f2d167e36501"
             },
             "require": {
                 "mindplay/readable": "^1.1"
@@ -230,7 +230,7 @@
                 }
             ],
             "description": "the resolver interface of the pmall framework",
-            "time": "2017-01-02 19:59:23"
+            "time": "2017-01-02 20:39:39"
         },
         {
             "name": "psr/http-message",

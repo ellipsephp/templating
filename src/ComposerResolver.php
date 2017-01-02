@@ -4,9 +4,9 @@ namespace Pmall\Templating;
 
 use Interop\Container\ContainerInterface;
 
-use Pmall\Resolver\ResolverInterface;
+use Pmall\Resolver\AbstractResolver;
 
-class ComposerResolver implements ResolverInterface
+class ComposerResolver implements AbstractResolver
 {
     /**
      * The application container.

@@ -173,12 +173,49 @@
             "time": "2016-12-28 00:14:17"
         },
         {
+            "name": "mindplay/readable",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mindplay-dk/readable.git",
+                "reference": "27fdf89a542330939d956e706dcb366d92fd599b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mindplay-dk/readable/zipball/27fdf89a542330939d956e706dcb366d92fd599b",
+                "reference": "27fdf89a542330939d956e706dcb366d92fd599b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4"
+            },
+            "require-dev": {
+                "mindplay/testies": "dev-master",
+                "phpunit/php-code-coverage": ">=2, <4"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Formats PHP values as human-readable strings",
+            "time": "2016-12-22 15:39:41"
+        },
+        {
             "name": "pmall/resolver",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "../resolver",
-                "reference": "955ff19e00726f647832f38ef7a2a99d4cacb43e"
+                "reference": "27cf9217f158cb5b5cc0f5265b883a59615da3d6"
+            },
+            "require": {
+                "mindplay/readable": "^1.1"
             },
             "type": "library",
             "autoload": {
@@ -193,7 +230,7 @@
                 }
             ],
             "description": "the resolver interface of the pmall framework",
-            "time": "2017-01-02 18:27:10"
+            "time": "2017-01-02 19:59:23"
         },
         {
             "name": "psr/http-message",

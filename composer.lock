@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "16cbdc0a54f0fe258930c3e880d0d343",
-    "content-hash": "7d1d8ad92ccd29140288f9ade49e33e0",
+    "hash": "0eccb1513578e603441ce5c9e2be0cc2",
+    "content-hash": "de443d7716f6836a8eae085acedb32e2",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -67,16 +67,16 @@
         },
         {
             "name": "http-interop/http-middleware",
-            "version": "0.2.0",
+            "version": "0.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/http-interop/http-middleware.git",
-                "reference": "ff545c87e97bf4d88f0cb7eb3e89f99aaa53d7a9"
+                "reference": "cff4fb65317875b2bccbb6b7b22eec18b5a96f04"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/http-interop/http-middleware/zipball/ff545c87e97bf4d88f0cb7eb3e89f99aaa53d7a9",
-                "reference": "ff545c87e97bf4d88f0cb7eb3e89f99aaa53d7a9",
+                "url": "https://api.github.com/repos/http-interop/http-middleware/zipball/cff4fb65317875b2bccbb6b7b22eec18b5a96f04",
+                "reference": "cff4fb65317875b2bccbb6b7b22eec18b5a96f04",
                 "shasum": ""
             },
             "require": {
@@ -91,7 +91,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "Interop\\Http\\Middleware\\": "src/"
+                    "Interop\\Http\\ServerMiddleware\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -104,7 +104,7 @@
                     "homepage": "http://www.php-fig.org/"
                 }
             ],
-            "description": "Common interface for HTTP middleware",
+            "description": "Common interface for HTTP server-side middleware",
             "keywords": [
                 "factory",
                 "http",
@@ -115,7 +115,7 @@
                 "request",
                 "response"
             ],
-            "time": "2016-09-25 13:30:27"
+            "time": "2016-12-16 18:14:42"
         },
         {
             "name": "league/plates",
@@ -212,11 +212,11 @@
             "source": {
                 "type": "git",
                 "url": "../core",
-                "reference": "e4b2d4236e0600c89470dc5c6462b79ec349ef10"
+                "reference": "d14ad5e7cf33f0c46430381db92aaec2838576ae"
             },
             "require": {
                 "container-interop/container-interop": "^1.1",
-                "http-interop/http-middleware": "=0.2.0",
+                "http-interop/http-middleware": "^0.4.0",
                 "mindplay/readable": "^1.0",
                 "psr/http-message": "^1.0"
             },
@@ -233,7 +233,7 @@
                 }
             ],
             "description": "the core component of the pmall framework",
-            "time": "2017-01-01 19:40:41"
+            "time": "2017-01-02 17:43:28"
         },
         {
             "name": "psr/http-message",

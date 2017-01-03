@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "0975b2e373af1277c1d1d8b0d83c9186",
-    "content-hash": "46777c622fb2d3d1a30c5243241b0ca1",
+    "hash": "f50e42b8d210d9d82c6e9d7fc0da120b",
+    "content-hash": "efc080b3bdacf3c4f9fc92e46e9d6a5a",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -207,12 +207,12 @@
             "time": "2016-12-22 15:39:41"
         },
         {
-            "name": "pmall/resolver",
+            "name": "pmall/contracts-resolver",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "../resolver",
-                "reference": "fb28af58fad12f1a5e8ef6142bb3f2d167e36501"
+                "url": "../contracts-resolver",
+                "reference": "85d6df8285d15ce5ec6af918ff942f0279bfaf39"
             },
             "require": {
                 "mindplay/readable": "^1.1"
@@ -220,7 +220,7 @@
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "Pmall\\Resolver\\": "src"
+                    "Pmall\\Contracts\\Resolver\\": "src"
                 }
             },
             "authors": [
@@ -230,7 +230,7 @@
                 }
             ],
             "description": "the resolver interface of the pmall framework",
-            "time": "2017-01-02 20:39:39"
+            "time": "2017-01-03 19:17:32"
         },
         {
             "name": "psr/http-message",
@@ -348,7 +348,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "pmall/resolver": 20
+        "pmall/contracts-resolver": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

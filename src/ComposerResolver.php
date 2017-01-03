@@ -4,7 +4,7 @@ namespace Pmall\Templating;
 
 use Interop\Container\ContainerInterface;
 
-use Pmall\Resolver\AbstractResolver;
+use Pmall\Contracts\Resolver\AbstractResolver;
 
 class ComposerResolver extends AbstractResolver
 {

@@ -212,7 +212,7 @@
             "source": {
                 "type": "git",
                 "url": "../contracts-resolver",
-                "reference": "49ea9e6f0d6b3eb22cb032bee5bad70b2f90059b"
+                "reference": "a0da6844ece26ce6d5b24a5c20148f0ff464ebfe"
             },
             "require": {
                 "mindplay/readable": "^1.1"
@@ -230,7 +230,7 @@
                 }
             ],
             "description": "the resolver interface of the pmall framework",
-            "time": "2017-01-04 14:04:30"
+            "time": "2017-01-04 22:30:57"
         },
         {
             "name": "psr/http-message",

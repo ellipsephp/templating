@@ -21,11 +21,5 @@
         "psr-4": {
             "Pmall\\Templating\\": "src"
         }
-    },
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "../contracts-resolver/.git"
-        }
-    ]
+    }
 }

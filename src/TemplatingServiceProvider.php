@@ -10,6 +10,8 @@ use Twig_Loader_Filesystem;
 use Pmall\Templating\Adapters\PlatesAdapter;
 use Pmall\Templating\Adapters\TwigAdapter;
 
+use Pmall\Http\ResponseFactoryBuilder;
+
 class TemplatingServiceProvider implements ServiceProvider
 {
     const KEY_PLATES = 'plates';
@@ -53,6 +55,13 @@ class TemplatingServiceProvider implements ServiceProvider
                 $engine = EngineFactory::make($this->config['engine'], $this->config);
 
                 return new TemplateResponseFactory($engine);
+
+            },
+            ResponseFactoryBuilder::class => function ($container, $previous) {
+
+                $factory = $container->get(TemplateResponseFactory::class);
+
+                return $previous()->withFactory('template', $factory);
 
             },
         ];

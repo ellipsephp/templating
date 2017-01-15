@@ -2,7 +2,7 @@
 
 namespace Pmall\Templating;
 
-use Pmall\Http\Factories\HtmlResponseFactory;
+use Pmall\Http\Factories\Diactoros\HtmlResponseFactory;
 
 class TemplateResponseFactory extends HtmlResponseFactory
 {

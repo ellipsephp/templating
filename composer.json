@@ -14,6 +14,7 @@
         "container-interop/container-interop": "^1.1",
         "container-interop/service-provider": "^0.3.0",
         "pmall/contracts-resolver": "dev-master",
+        "pmall/http": "dev-master",
         "league/plates": "^3.1",
         "twig/twig": "^1.28"
     },

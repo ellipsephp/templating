@@ -17,13 +17,6 @@ class TemplatingServiceProvider implements ServiceProvider
     const KEY_PLATES = 'plates';
     const KEY_TWIG = 'twig';
 
-    private $config;
-
-    public function __construct(array $config)
-    {
-        $this->config = $config;
-    }
-
     public function getServices()
     {
         EngineFactory::register(static::KEY_PLATES, function ($config) {
@@ -47,12 +40,16 @@ class TemplatingServiceProvider implements ServiceProvider
         return [
             ComposerResolver::class => function ($container) {
 
-                return new ComposerResolver($container, $container->get(TemplateResponseFactory::class));
+                $response_factory = $container->get(TemplateResponseFactory::class);
+
+                return new ComposerResolver($container, $response_factory);
 
             },
-            TemplateResponseFactory::class => function () {
+            TemplateResponseFactory::class => function ($container) {
 
-                $engine = EngineFactory::make($this->config['engine'], $this->config);
+                $config = $container->get('templating');
+
+                $engine = EngineFactory::make($config['engine'], $config);
 
                 return new TemplateResponseFactory($engine);
 

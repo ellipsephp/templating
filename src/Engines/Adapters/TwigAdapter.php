@@ -1,6 +1,6 @@
 <?php
 
-namespace Pmall\Templating\Adapters;
+namespace Pmall\Templating\Engines\Adapters;
 
 use Twig_LoaderInterface;
 use Twig_Environment;

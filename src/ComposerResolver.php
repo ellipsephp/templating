@@ -4,7 +4,9 @@ namespace Pmall\Templating;
 
 use Interop\Container\ContainerInterface;
 
-use Pmall\Contracts\Resolver\AbstractResolver;
+use Interop\Http\ServerMiddleware\MiddlewareInterface;
+
+use Ellipse\Contracts\Resolver\AbstractResolver;
 
 class ComposerResolver extends AbstractResolver
 {
@@ -39,9 +41,9 @@ class ComposerResolver extends AbstractResolver
      * Return whether this element is a composer.
      *
      * @param mixed $element the element which may be a composer.
-     * @return boolean
+     * @return bool
      */
-    public function canResolve($element)
+    public function canResolve($element): bool
     {
         return is_a($element, ComposerInterface::class, true);
     }
@@ -52,7 +54,7 @@ class ComposerResolver extends AbstractResolver
      * @param mixed $composer the composer to resolve.
      * @return \Pmall\Templating\ComposerMiddleware
      */
-    public function getMiddleware($composer)
+    public function getMiddleware($composer): MiddlewareInterface
     {
         $composer = is_string($composer)
             ? $this->container->get($composer)

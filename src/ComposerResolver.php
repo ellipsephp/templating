@@ -6,7 +6,7 @@ use Interop\Container\ContainerInterface;
 
 use Interop\Http\ServerMiddleware\MiddlewareInterface;
 
-use Ellipse\Contracts\Resolver\AbstractResolver;
+use Ellipse\Resolvers\AbstractResolver;
 
 class ComposerResolver extends AbstractResolver
 {

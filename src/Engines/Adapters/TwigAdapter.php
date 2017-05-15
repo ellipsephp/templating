@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Pmall\Templating\Engines\Adapters;
 
@@ -9,14 +9,27 @@ use Pmall\Templating\EngineInterface;
 
 class TwigAdapter implements EngineInterface
 {
+    /**
+     * The underlying twig instance.
+     *
+     * @var \Twig_LoaderInterface
+     */
     private $twig;
 
-    public function __construct(Twig_LoaderInterface $loader, array $twig_options)
+    /**
+     * Set up a twig adapter with given twig loader instance.
+     *
+     * @param \League\Plates\Engine
+     */
+    public function __construct(Twig_LoaderInterface $loader, array $twig_options = [])
     {
         $this->twig = new Twig_Environment($loader, $twig_options);
     }
 
-    public function render($file, array $data = [])
+    /**
+     * @inheritdoc
+     */
+    public function render(string $file, array $data = []): string
     {
         return $this->twig->render($file, $data);
     }

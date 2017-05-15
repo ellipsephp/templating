@@ -9,11 +9,10 @@ use Pmall\Templating\Engines\Adapters\PlatesAdapter;
 
 class PlatesFactory
 {
-    public function __invoke($parameters): EngineInterface
+    public function __invoke($path, $extension = null): EngineInterface
     {
-        return new PlatesAdapter(new Plates(
-            $parameters['views_dir'],
-            $parameters['extension']
-        ));
+        $plates = new Plates($path, $extension);
+
+        return new PlatesAdapter($plates);
     }
 }

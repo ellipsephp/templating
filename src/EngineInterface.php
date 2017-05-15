@@ -1,8 +1,15 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Pmall\Templating;
 
 interface EngineInterface
 {
-    public function render($file, array $data = []);
+    /**
+     * Return a response from a template file and a list of data.
+     *
+     * @param string    $file
+     * @param array     $data
+     * @return string
+     */
+    public function render(string $file, array $data = []): string;
 }

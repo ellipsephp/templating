@@ -9,11 +9,10 @@ use Pmall\Templating\Engines\Adapters\TwigAdapter;
 
 class TwigFactory
 {
-    public function __invoke($parameters): EngineInterface
+    public function __invoke($path, $options): EngineInterface
     {
-        return new TwigAdapter(
-            new Twig_Loader_Filesystem($parameters['views_dir']),
-            $parameters
-        );
+        $twig = new Twig_Loader_Filesystem($path);
+
+        return new TwigAdapter($twig, $options);
     }
 }

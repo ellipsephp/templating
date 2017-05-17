@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Pmall\Templating;
+namespace Ellipse\Templating;
 
 use Psr\Http\Message\ServerRequestInterface;
 
@@ -12,14 +12,14 @@ class ComposerMiddleware implements MiddlewareInterface
     /**
      * The underlying composer.
      *
-     * @var \Pmall\Templating\ComposerInterface
+     * @var \Ellipse\Templating\ComposerInterface
      */
     private $composer;
 
     /**
      * The template response factory.
      *
-     * @var \Pmall\Templating\TemplateResponseFactory
+     * @var \Ellipse\Templating\TemplateResponseFactory
      */
     private $factory;
 
@@ -27,8 +27,8 @@ class ComposerMiddleware implements MiddlewareInterface
      * Set up a composer middleware with the composer providing values and the
      * template response factory receiving those values.
      *
-     * @param \Pmall\Templating\ComposerInterface       $composer
-     * @param \Pmall\Templating\TemplateResponseFactory $factory
+     * @param \Ellipse\Templating\ComposerInterface       $composer
+     * @param \Ellipse\Templating\TemplateResponseFactory $factory
      */
     public function __construct(ComposerInterface $composer, TemplateResponseFactory $factory)
     {

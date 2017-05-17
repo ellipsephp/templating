@@ -1,11 +1,11 @@
 <?php
 
-namespace Pmall\Templating\Engines\Factories;
+namespace Ellipse\Templating\Engines\Factories;
 
 use League\Plates\Engine as Plates;
 
-use Pmall\Templating\EngineInterface;
-use Pmall\Templating\Engines\Adapters\PlatesAdapter;
+use Ellipse\Templating\EngineInterface;
+use Ellipse\Templating\Engines\Adapters\PlatesAdapter;
 
 class PlatesFactory
 {

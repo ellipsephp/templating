@@ -1,10 +1,10 @@
 <?php declare(strict_types=1);
 
-namespace Pmall\Templating\Engines\Adapters;
+namespace Ellipse\Templating\Engines\Adapters;
 
 use League\Plates\Engine;
 
-use Pmall\Templating\EngineInterface;
+use Ellipse\Templating\EngineInterface;
 
 class PlatesAdapter implements EngineInterface
 {

@@ -1,11 +1,11 @@
 <?php declare(strict_types=1);
 
-namespace Pmall\Templating\Engines\Adapters;
+namespace Ellipse\Templating\Engines\Adapters;
 
 use Twig_LoaderInterface;
 use Twig_Environment;
 
-use Pmall\Templating\EngineInterface;
+use Ellipse\Templating\EngineInterface;
 
 class TwigAdapter implements EngineInterface
 {

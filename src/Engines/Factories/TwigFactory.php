@@ -1,11 +1,11 @@
 <?php
 
-namespace Pmall\Templating\Engines\Factories;
+namespace Ellipse\Templating\Engines\Factories;
 
 use Twig_Loader_Filesystem;
 
-use Pmall\Templating\EngineInterface;
-use Pmall\Templating\Engines\Adapters\TwigAdapter;
+use Ellipse\Templating\EngineInterface;
+use Ellipse\Templating\Engines\Adapters\TwigAdapter;
 
 class TwigFactory
 {

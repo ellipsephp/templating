@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Pmall\Templating;
+namespace Ellipse\Templating;
 
 use Psr\Http\Message\ResponseInterface;
 
@@ -11,7 +11,7 @@ class TemplateResponseFactory
     /**
      * The template engine.
      *
-     * @var \Pmall\Templating\EngineInterface
+     * @var \Ellipse\Templating\EngineInterface
      */
     private $engine;
 
@@ -25,7 +25,7 @@ class TemplateResponseFactory
     /**
      * Set up a template response factory with the given template engine.
      *
-     * @param \Pmall\Templating\EngineInterface
+     * @param \Ellipse\Templating\EngineInterface
      */
     public function __construct(EngineInterface $engine)
     {

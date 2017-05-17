@@ -1,6 +1,6 @@
 {
-    "name": "pmall/templating",
-    "description": "the templating component of the pmall framework",
+    "name": "ellipse/templating",
+    "description": "the templating component of the ellipse framework",
     "type": "library",
     "authors": [
         {
@@ -23,7 +23,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Pmall\\Templating\\": "src"
+            "Ellipse\\Templating\\": "src"
         }
     }
 }

@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Pmall\Templating;
+namespace Ellipse\Templating;
 
 use Interop\Http\ServerMiddleware\MiddlewareInterface;
 
@@ -19,7 +19,7 @@ class ComposerResolver extends AbstractResolver
     /**
      * The factory for which default values will be set.
      *
-     * @var \Pmall\Templating\TemplateResponseFactory
+     * @var \Ellipse\Templating\TemplateResponseFactory
      */
     private $factory;
 
@@ -28,7 +28,7 @@ class ComposerResolver extends AbstractResolver
      * template response factory for which default values will be set.
      *
      * @param \Ellipse\Container\ReflectionContainer    $container
-     * @param \Pmall\Templating\TemplateResponseFactory $factory
+     * @param \Ellipse\Templating\TemplateResponseFactory $factory
      */
     public function __construct(ReflectionContainer $container, TemplateResponseFactory $factory)
     {
@@ -51,7 +51,7 @@ class ComposerResolver extends AbstractResolver
      * Resolve the middleware from the composer.
      *
      * @param \Psr\Container\ContainerInterface $composer
-     * @return \Pmall\Templating\ComposerMiddleware
+     * @return \Ellipse\Templating\ComposerMiddleware
      */
     public function getMiddleware($composer): MiddlewareInterface
     {

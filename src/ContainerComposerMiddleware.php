@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Pmall\Templating;
+namespace Ellipse\Templating;
 
 use Psr\Http\Message\ServerRequestInterface;
 
@@ -28,7 +28,7 @@ class ContainerComposerMiddleware implements MiddlewareInterface
     /**
      * The template response factory.
      *
-     * @var \Pmall\Templating\TemplateResponseFactory
+     * @var \Ellipse\Templating\TemplateResponseFactory
      */
     private $factory;
 
@@ -39,7 +39,7 @@ class ContainerComposerMiddleware implements MiddlewareInterface
      *
      * @param \Ellipse\Container\ReflectionContainer    $container
      * @param string                                    $classname
-     * @param \Pmall\Templating\TemplateResponseFactory $factory
+     * @param \Ellipse\Templating\TemplateResponseFactory $factory
      */
     public function __construct(ReflectionContainer $container, string $classname, TemplateResponseFactory $factory)
     {

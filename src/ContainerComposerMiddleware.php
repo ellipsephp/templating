@@ -26,26 +26,26 @@ class ContainerComposerMiddleware implements MiddlewareInterface
     private $classname;
 
     /**
-     * The template response factory.
+     * The template response engine.
      *
-     * @var \Ellipse\Templating\TemplateResponseFactory
+     * @var \Ellipse\Templating\EngineInterface
      */
-    private $factory;
+    private $engine;
 
     /**
     * Set up a composer middleware with the application container, the class
-    * name of the composer providing values and the template response factory
-    * receiving those values.
+    * name of the composer providing values and the template engine receiving
+    * those values.
      *
      * @param \Ellipse\Container\ReflectionContainer    $container
      * @param string                                    $classname
-     * @param \Ellipse\Templating\TemplateResponseFactory $factory
+     * @param \Ellipse\Templating\EngineInterface       $engine
      */
-    public function __construct(ReflectionContainer $container, string $classname, TemplateResponseFactory $factory)
+    public function __construct(ReflectionContainer $container, string $classname, EngineInterface $engine)
     {
         $this->container = $container;
         $this->classname = $classname;
-        $this->factory = $factory;
+        $this->engine = $engine;
     }
 
     /**
@@ -70,7 +70,7 @@ class ContainerComposerMiddleware implements MiddlewareInterface
             : $container->make($classname, $overrides);
 
         // Proxy a composer middleware using this composer.
-        $middleware = new ComposerMiddleware($composer, $this->factory);
+        $middleware = new ComposerMiddleware($composer, $this->engine);
 
         return $middleware->process($request, $delegate);
     }

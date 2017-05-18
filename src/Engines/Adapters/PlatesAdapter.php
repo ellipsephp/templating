@@ -4,9 +4,7 @@ namespace Ellipse\Templating\Engines\Adapters;
 
 use League\Plates\Engine;
 
-use Ellipse\Templating\EngineInterface;
-
-class PlatesAdapter implements EngineInterface
+class PlatesAdapter extends AbstractAdapter
 {
     /**
      * The underlying plates instance.
@@ -28,8 +26,10 @@ class PlatesAdapter implements EngineInterface
     /**
      * @inheritdoc
      */
-    public function render(string $file, array $data = []): string
+    public function render(string $file, array $values = []): string
     {
-        return $this->plates->render($file, $data);
+        $merged = $this->mergeValues($values);
+
+        return $this->plates->render($file, $merged);
     }
 }

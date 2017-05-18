@@ -5,9 +5,7 @@ namespace Ellipse\Templating\Engines\Adapters;
 use Twig_LoaderInterface;
 use Twig_Environment;
 
-use Ellipse\Templating\EngineInterface;
-
-class TwigAdapter implements EngineInterface
+class TwigAdapter extends AbstractAdapter
 {
     /**
      * The underlying twig instance.
@@ -29,8 +27,10 @@ class TwigAdapter implements EngineInterface
     /**
      * @inheritdoc
      */
-    public function render(string $file, array $data = []): string
+    public function render(string $file, array $values = []): string
     {
-        return $this->twig->render($file, $data);
+        $merged = $this->mergeValues($values);
+
+        return $this->twig->render($file, $merged);
     }
 }

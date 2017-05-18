@@ -12,28 +12,28 @@ class ComposerResolver extends AbstractResolver
     /**
      * The application container.
      *
-     * @var \Psr\Container\ContainerInterface
+     * @var \Ellipse\Container\ReflectionContainer
      */
     private $container;
 
     /**
-     * The factory for which default values will be set.
+     * The template engine for which default values will be set.
      *
-     * @var \Ellipse\Templating\TemplateResponseFactory
+     * @var \Ellipse\Templating\EngineInterface
      */
-    private $factory;
+    private $engine;
 
     /**
      * Sets up the action resolver with the application container and the
-     * template response factory for which default values will be set.
+     * template engine for which default values will be set.
      *
      * @param \Ellipse\Container\ReflectionContainer    $container
-     * @param \Ellipse\Templating\TemplateResponseFactory $factory
+     * @param \Ellipse\Templating\EngineInterface       $engine
      */
-    public function __construct(ReflectionContainer $container, TemplateResponseFactory $factory)
+    public function __construct(ReflectionContainer $container, EngineInterface $engine)
     {
         $this->container = $container;
-        $this->factory = $factory;
+        $this->engine = $engine;
     }
 
     /**
@@ -56,7 +56,7 @@ class ComposerResolver extends AbstractResolver
     public function getMiddleware($composer): MiddlewareInterface
     {
         return is_object($composer)
-            ? new ComposerMiddleware($composer, $this->factory)
-            : new ContainerComposerMiddleware($this->container, $composer, $this->factory);
+            ? new ComposerMiddleware($composer, $this->engine)
+            : new ContainerComposerMiddleware($this->container, $composer, $this->engine);
     }
 }

@@ -28,9 +28,9 @@ class TemplatingServiceProvider implements ServiceProvider
             ComposerResolver::class => function ($container) {
 
                 $container = new ReflectionContainer($container);
-                $factory = $container->get(TemplateResponseFactory::class);
+                $engine = $container->get(EngineInterface::class);
 
-                return new ComposerResolver($container, $factory);
+                return new ComposerResolver($container, $engine);
 
             },
 
@@ -38,15 +38,6 @@ class TemplatingServiceProvider implements ServiceProvider
             EngineInterface::class => function ($container) {
 
                 return $container->get('templating.engine');
-
-            },
-
-            // Provides a template response factory to the end user.
-            TemplateResponseFactory::class => function ($container) {
-
-                $engine = $container->get(EngineInterface::class);
-
-                return new TemplateResponseFactory($engine);
 
             },
         ];

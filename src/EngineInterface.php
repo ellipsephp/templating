@@ -5,11 +5,20 @@ namespace Ellipse\Templating;
 interface EngineInterface
 {
     /**
-     * Return a response from a template file and a list of data.
+     * Add a key => value pair to use when rendering.
+     *
+     * @param string    $key
+     * @param mixed     $value
+     * @return void
+     */
+    public function setDefault(string $key, $value);
+
+    /**
+     * Return a html string from a template file and a list of values.
      *
      * @param string    $file
-     * @param array     $data
+     * @param array     $values
      * @return string
      */
-    public function render(string $file, array $data = []): string;
+    public function render(string $file, array $values = []): string;
 }

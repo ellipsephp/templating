@@ -17,28 +17,27 @@ class ComposerMiddleware implements MiddlewareInterface
     private $composer;
 
     /**
-     * The template response factory.
+     * The template engine.
      *
-     * @var \Ellipse\Templating\TemplateResponseFactory
+     * @var \Ellipse\Templating\EngineInterface
      */
-    private $factory;
+    private $engine;
 
     /**
      * Set up a composer middleware with the composer providing values and the
-     * template response factory receiving those values.
+     * template engine receiving those values.
      *
-     * @param \Ellipse\Templating\ComposerInterface       $composer
-     * @param \Ellipse\Templating\TemplateResponseFactory $factory
+     * @param \Ellipse\Templating\ComposerInterface $composer
+     * @param \Ellipse\Templating\EngineInterface   $engine
      */
-    public function __construct(ComposerInterface $composer, TemplateResponseFactory $factory)
+    public function __construct(ComposerInterface $composer, EngineInterface $engine)
     {
         $this->composer = $composer;
-        $this->factory = $factory;
+        $this->engine = $engine;
     }
 
     /**
-     * Get the composer and use its values to populate the template response
-     * factory.
+     * Get the composer and use its values to populate the template engine.
      *
      * @param \Psr\Http\Message\ServerRequestInterface  $request
      * @param \Psr\Http\Message\DelegateInterface       $delegate
@@ -50,7 +49,7 @@ class ComposerMiddleware implements MiddlewareInterface
 
         foreach ($values as $key => $value) {
 
-            $this->factory->set($key, $value);
+            $this->engine->setDefault($key, $value);
 
         }
 

@@ -1,0 +1,7 @@
+{
+    "classes": {
+        "service-providers": [
+            "Ellipse\\Templating\\TemplatingServiceProvider"
+        ]
+    }
+}

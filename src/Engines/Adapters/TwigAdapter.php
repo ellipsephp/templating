@@ -10,14 +10,15 @@ class TwigAdapter extends AbstractAdapter
     /**
      * The underlying twig instance.
      *
-     * @var \Twig_LoaderInterface
+     * @var \Twig_Environment
      */
     private $twig;
 
     /**
-     * Set up a twig adapter with given twig loader instance.
+     * Set up a twig adapter with a twig loader instance and the twig options.
      *
-     * @param \League\Plates\Engine
+     * @param \Twig_LoaderInterface $twig
+     * @param array                 $options
      */
     public function __construct(Twig_LoaderInterface $loader, array $twig_options = [])
     {

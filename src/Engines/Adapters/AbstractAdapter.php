@@ -16,7 +16,7 @@ abstract class AbstractAdapter implements EngineInterface
     /**
      * @inheritdoc
      */
-    public function setDefault(string $key, $value)
+    public function setDefault(string $key, $value): void
     {
         $this->defaults[$key] = $value;
     }
@@ -27,7 +27,7 @@ abstract class AbstractAdapter implements EngineInterface
      * @param array $values
      * @return array
      */
-    protected function mergeValues(array $values)
+    protected function mergeValues(array $values): array
     {
         return array_merge($this->defaults, $values);
     }

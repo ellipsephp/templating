@@ -11,7 +11,7 @@ interface EngineInterface
      * @param mixed     $value
      * @return void
      */
-    public function setDefault(string $key, $value);
+    public function setDefault(string $key, $value): void;
 
     /**
      * Return a html string from a template file and a list of values.

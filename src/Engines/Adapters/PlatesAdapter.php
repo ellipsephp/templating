@@ -16,7 +16,7 @@ class PlatesAdapter extends AbstractAdapter
     /**
      * Set up a plates adapter with the given plates instance.
      *
-     * @param \League\Plates\Engine
+     * @param \League\Plates\Engine $plates
      */
     public function __construct(Engine $plates)
     {

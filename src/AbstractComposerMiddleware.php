@@ -21,7 +21,7 @@ abstract class AbstractComposerMiddleware implements MiddlewareInterface
     /**
      * The template engine.
      *
-     * @var \Ellipse\Templating\EngineInterface
+     * @var \Ellipse\Templating\Engine
      */
     private $engine;
 
@@ -30,9 +30,9 @@ abstract class AbstractComposerMiddleware implements MiddlewareInterface
      * the application container and the template engine receiving the values.
      *
      * @param \Ellipse\Container\ReflectionContainer    $container
-     * @param \Ellipse\Templating\EngineInterface       $engine
+     * @param \Ellipse\Templating\Engine                $engine
      */
-    public function __construct(ReflectionContainer $container, EngineInterface $engine)
+    public function __construct(ReflectionContainer $container, Engine $engine)
     {
         $this->container = $container;
         $this->engine = $engine;

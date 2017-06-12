@@ -4,18 +4,18 @@ namespace Ellipse\Templating;
 
 use Interop\Container\ServiceProvider;
 
-use Ellipse\Templating\Engines\Factories\PlatesFactory;
-use Ellipse\Templating\Engines\Factories\TwigFactory;
+use Ellipse\Contracts\Templating\EngineInterface;
 
 class TemplatingServiceProvider implements ServiceProvider
 {
     public function getServices()
     {
         return [
-            // Provides an engine interface implementation specified by the end user.
-            EngineInterface::class => function ($container) {
+            Engine::class => function ($container) {
 
-                return $container->get('templating.engine');
+                $engine = $container->get(EngineInterface::class);
+
+                return new Engine($engine);
 
             },
         ];

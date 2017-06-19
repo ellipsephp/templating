@@ -3,6 +3,7 @@
 use Ellipse\Contracts\Templating\EngineInterface;
 
 use Ellipse\Templating\Engine;
+use Ellipse\Templating\Exceptions\TemplatingException;
 
 describe('Engine', function () {
 
@@ -33,6 +34,19 @@ describe('Engine', function () {
             $test = $this->engine->render($name, $data);
 
             expect($test)->to->be->equal($expected);
+
+        });
+
+        it('should catch exceptions from the underlying template engine and throw its own exceptions', function () {
+
+            $name = 'name';
+            $data = ['data' => 'value'];
+
+            $this->decorated->shouldReceive('render')->once()
+                ->with($name, $data)
+                ->andThrow(new Exception);
+
+            expect([$this->engine, 'render'])->with($name, $data)->to->throw(TemplatingException::class);
 
         });
 

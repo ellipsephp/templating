@@ -2,7 +2,11 @@
 
 namespace Ellipse\Templating;
 
+use Exception;
+
 use Ellipse\Contracts\Templating\EngineInterface;
+
+use Ellipse\Templating\Exceptions\TemplatingException;
 
 class Engine
 {
@@ -52,6 +56,16 @@ class Engine
     {
         $merged = array_merge($this->defaults, $data);
 
-        return $this->engine->render($file, $merged);
+        try {
+
+            return $this->engine->render($file, $merged);
+
+        }
+
+        catch (Exception $e) {
+
+            throw new TemplatingException($e->getMessage());
+
+        }
     }
 }

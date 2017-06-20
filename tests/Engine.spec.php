@@ -15,6 +15,38 @@ describe('Engine', function () {
 
     });
 
+    describe('->registerNamespace()', function () {
+
+        it('should proxy the underlying template engine registerNamespace method', function () {
+
+            $namespace = 'namespace';
+            $path = 'path';
+
+            $this->decorated->shouldReceive('registerNamespace')->once()
+                ->with($namespace, $path);
+
+            $this->engine->registerNamespace($namespace, $path);
+
+        });
+
+    });
+
+    describe('->registerFunction()', function () {
+
+        it('should proxy the underlying template engine registerFunction method', function () {
+
+            $name = 'name';
+            $cb = function () {};
+
+            $this->decorated->shouldReceive('registerFunction')->once()
+                ->with($name, $cb);
+
+            $this->engine->registerFunction($name, $cb);
+
+        });
+
+    });
+
     describe('->setDefault(), ->render()', function () {
 
         it('should proxy the underlying template engine render method', function () {
@@ -47,22 +79,6 @@ describe('Engine', function () {
                 ->andThrow(new Exception);
 
             expect([$this->engine, 'render'])->with($name, $data)->to->throw(TemplatingException::class);
-
-        });
-
-    });
-
-    describe('->registerFunction()', function () {
-
-        it('should proxy the underlying template engine render method', function () {
-
-            $name = 'name';
-            $cb = function () {};
-
-            $this->decorated->shouldReceive('registerFunction')->once()
-                ->with($name, $cb);
-
-            $this->engine->registerFunction($name, $cb);
 
         });
 

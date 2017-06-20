@@ -46,6 +46,18 @@ class Engine
     }
 
     /**
+     * Proxy the underlying template engine register namespace method.
+     *
+     * @param string $namespace
+     * @param string $path
+     * @return void
+     */
+    public function registerNamespace(string $namespace, string $path): void
+    {
+        $this->engine->registerNamespace($namespace, $path);
+    }
+
+    /**
      * Proxy the underlying template engine register function method.
      *
      * @param string    $name

@@ -46,6 +46,18 @@ class Engine
     }
 
     /**
+     * Proxy the underlying template engine register function method.
+     *
+     * @param string    $name
+     * @param callable  $cb
+     * @return void
+     */
+    public function registerFunction(string $name, callable $cb): void
+    {
+        $this->engine->registerFunction($name, $cb);
+    }
+
+    /**
      * Proxy the underlying template engine render method.
      *
      * @param string    $file

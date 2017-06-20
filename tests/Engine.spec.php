@@ -17,7 +17,7 @@ describe('Engine', function () {
 
     describe('->setDefault(), ->render()', function () {
 
-        it('should proxy the underlying plates instance render method', function () {
+        it('should proxy the underlying template engine render method', function () {
 
             $name = 'name';
             $data = ['data' => 'value3'];
@@ -47,6 +47,22 @@ describe('Engine', function () {
                 ->andThrow(new Exception);
 
             expect([$this->engine, 'render'])->with($name, $data)->to->throw(TemplatingException::class);
+
+        });
+
+    });
+
+    describe('->registerFunction()', function () {
+
+        it('should proxy the underlying template engine render method', function () {
+
+            $name = 'name';
+            $cb = function () {};
+
+            $this->decorated->shouldReceive('registerFunction')->once()
+                ->with($name, $cb);
+
+            $this->engine->registerFunction($name, $cb);
 
         });
 

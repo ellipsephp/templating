@@ -14,27 +14,27 @@ class TemplatingServiceProvider implements ServiceProvider
     public function getServices()
     {
         return [
-            'templating.path' => function ($container) {
+            'templating.path' => function ($container, $previous = null) {
 
-                return null;
-
-            },
-
-            'templating.namespaces' => function ($container) {
-
-                return [];
+                return is_null($previous) ? null : $previous();
 
             },
 
-            'templating.functions' => function ($container) {
+            'templating.namespaces' => function ($container, $previous = null) {
 
-                return [];
+                return is_null($previous) ? [] : $previous();
 
             },
 
-            'templating.options' => function ($container) {
+            'templating.functions' => function ($container, $previous = null) {
 
-                return [];
+                return is_null($previous) ? [] : $previous();
+
+            },
+
+            'templating.options' => function ($container, $previous = null) {
+
+                return is_null($previous) ? [] : $previous();
 
             },
 

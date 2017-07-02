@@ -4,7 +4,7 @@ namespace Ellipse\Templating\Exceptions;
 
 use RuntimeException;
 
-use Ellipse\Contracts\Templating\EngineInterface;
+use Ellipse\Contracts\Templating\EngineAdapterInterface;
 
 class NoAdapterProvidedException extends RuntimeException implements TemplatingExceptionInterface
 {
@@ -15,7 +15,7 @@ class NoAdapterProvidedException extends RuntimeException implements TemplatingE
             Make sure you installed a templating adapter package (ex: %s) and registered its service provider in the container.
 EOT;
 
-        parent::__construct(sprintf($msg, EngineInterface::class, implode(', ', [
+        parent::__construct(sprintf($msg, EngineAdapterInterface::class, implode(', ', [
             'ellipse/templating-plates',
             'ellipse/templating-twig',
         ])));

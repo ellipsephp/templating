@@ -1,6 +1,6 @@
 <?php
 
-use Ellipse\Contracts\Templating\EngineInterface;
+use Ellipse\Contracts\Templating\EngineAdapterInterface;
 
 use Ellipse\Templating\Engine;
 use Ellipse\Templating\Exceptions\TemplatingException;
@@ -9,7 +9,7 @@ describe('Engine', function () {
 
     beforeEach(function () {
 
-        $this->decorated = Mockery::mock(EngineInterface::class);
+        $this->decorated = Mockery::mock(EngineAdapterInterface::class);
 
         $this->engine = new Engine($this->decorated);
 

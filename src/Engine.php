@@ -4,16 +4,16 @@ namespace Ellipse\Templating;
 
 use Exception;
 
-use Ellipse\Contracts\Templating\EngineInterface;
+use Ellipse\Contracts\Templating\EngineAdapterInterface;
 
 use Ellipse\Templating\Exceptions\TemplatingException;
 
 class Engine
 {
     /**
-     * The underlying template engine to decorate.
+     * The underlying template engine adapter to decorate.
      *
-     * @var \Ellipse\Contracts\Templating\EngineInterface
+     * @var \Ellipse\Contracts\Templating\EngineAdapterInterface
      */
     private $engine;
 
@@ -28,7 +28,7 @@ class Engine
      * Set up a template engine decorator with the underlying template engine to
      * decorate.
      */
-    public function __construct(EngineInterface $engine)
+    public function __construct(EngineAdapterInterface $engine)
     {
         $this->engine = $engine;
     }

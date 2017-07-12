@@ -14,10 +14,10 @@ class TemplatingServiceProvider implements ServiceProvider
     public function getServices()
     {
         return [
-            // Provides null for templating.path when no previous value is provided.
+            // Provides cwd for templating.path when no previous value is provided.
             'templating.path' => function ($container, $previous = null) {
 
-                return is_null($previous) ? null : $previous();
+                return is_null($previous) ? getcwd() : $previous();
 
             },
 
@@ -45,22 +45,12 @@ class TemplatingServiceProvider implements ServiceProvider
             // Provides a template engine using the template engine adapter implementation.
             Engine::class => function ($container) {
 
-                // Ensure an implementation of template engine adapter is provided.
                 if (! $container->has(EngineAdapterInterface::class)) {
 
-                    throw new NoAdapterProvidedException;
+                    throw new NoAdapterProvidedException(EngineAdapterInterface::class);
 
                 }
 
-                // Ensure a templates path is provided.
-                if (is_null($container->get('templating.path'))) {
-
-                    throw new NoTemplatesPathProvidedException;
-
-                }
-
-                // Get the template engine adapter implementation, the optional
-                // list of template namespaces and the optional list of functions.
                 $adapter = $container->get(EngineAdapterInterface::class);
                 $namespaces = $container->get('templating.namespaces');
                 $functions = $container->get('templating.functions');

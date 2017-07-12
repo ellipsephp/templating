@@ -15,6 +15,12 @@ describe('Engine', function () {
 
     });
 
+    afterEach(function () {
+
+        Mockery::close();
+
+    });
+
     describe('->registerNamespace()', function () {
 
         it('should proxy the underlying template engine registerNamespace method', function () {

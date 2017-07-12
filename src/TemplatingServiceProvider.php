@@ -35,6 +35,13 @@ class TemplatingServiceProvider implements ServiceProvider
 
             },
 
+            // Provides [] for templating.extensions when no previous value is provided.
+            'templating.extensions' => function ($container, $previous = null) {
+
+                return is_null($previous) ? [] : $previous();
+
+            },
+
             // Provides [] for templating.options when no previous value is provided.
             'templating.options' => function ($container, $previous = null) {
 
@@ -54,6 +61,7 @@ class TemplatingServiceProvider implements ServiceProvider
                 $adapter = $container->get(EngineAdapterInterface::class);
                 $namespaces = $container->get('templating.namespaces');
                 $functions = $container->get('templating.functions');
+                $extensions = $container->get('templating.extensions');
 
                 // Load the eventual namespaces.
                 foreach ($namespaces as $namespace => $path) {
@@ -66,6 +74,13 @@ class TemplatingServiceProvider implements ServiceProvider
                 foreach ($functions as $name => $function) {
 
                     $adapter->registerFunction($name, $function);
+
+                }
+
+                // Load the eventual extensions.
+                foreach ($extensions as $extension) {
+
+                    $adapter->registerExtension($extension);
 
                 }
 

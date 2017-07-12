@@ -70,6 +70,18 @@ class Engine
     }
 
     /**
+     * Proxy the underlying template engine register extension method.
+     *
+     * @param mixed     $extension
+     * @param callable  $cb
+     * @return void
+     */
+    public function registerExtension($extension): void
+    {
+        $this->engine->registerExtension($extension);
+    }
+
+    /**
      * Proxy the underlying template engine render method.
      *
      * @param string    $file

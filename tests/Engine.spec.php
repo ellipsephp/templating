@@ -23,7 +23,7 @@ describe('Engine', function () {
 
     describe('->registerNamespace()', function () {
 
-        it('should proxy the underlying template engine registerNamespace method', function () {
+        it('should proxy the underlying template engine ->registerNamespace() method', function () {
 
             $namespace = 'namespace';
             $path = 'path';
@@ -39,7 +39,7 @@ describe('Engine', function () {
 
     describe('->registerFunction()', function () {
 
-        it('should proxy the underlying template engine registerFunction method', function () {
+        it('should proxy the underlying template engine ->registerFunction() method', function () {
 
             $name = 'name';
             $cb = function () {};
@@ -53,9 +53,24 @@ describe('Engine', function () {
 
     });
 
+    describe('->registerExtension()', function () {
+
+        it('should proxy the underlying template engine ->registerExtension() method', function () {
+
+            $extension = new class {};
+
+            $this->decorated->shouldReceive('registerExtension')->once()
+                ->with($extension);
+
+            $this->engine->registerExtension($extension);
+
+        });
+
+    });
+
     describe('->setDefault(), ->render()', function () {
 
-        it('should proxy the underlying template engine render method', function () {
+        it('should proxy the underlying template engine ->render() method', function () {
 
             $name = 'name';
             $data = ['data' => 'value3'];

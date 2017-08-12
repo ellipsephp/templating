@@ -9,9 +9,9 @@ describe('Engine', function () {
 
     beforeEach(function () {
 
-        $this->decorated = Mockery::mock(EngineAdapterInterface::class);
+        $this->adapter = Mockery::mock(EngineAdapterInterface::class);
 
-        $this->engine = new Engine($this->decorated);
+        $this->engine = new Engine($this->adapter);
 
     });
 
@@ -28,7 +28,7 @@ describe('Engine', function () {
             $namespace = 'namespace';
             $path = 'path';
 
-            $this->decorated->shouldReceive('registerNamespace')->once()
+            $this->adapter->shouldReceive('registerNamespace')->once()
                 ->with($namespace, $path);
 
             $this->engine->registerNamespace($namespace, $path);
@@ -44,7 +44,7 @@ describe('Engine', function () {
             $name = 'name';
             $cb = function () {};
 
-            $this->decorated->shouldReceive('registerFunction')->once()
+            $this->adapter->shouldReceive('registerFunction')->once()
                 ->with($name, $cb);
 
             $this->engine->registerFunction($name, $cb);
@@ -59,7 +59,7 @@ describe('Engine', function () {
 
             $extension = new class {};
 
-            $this->decorated->shouldReceive('registerExtension')->once()
+            $this->adapter->shouldReceive('registerExtension')->once()
                 ->with($extension);
 
             $this->engine->registerExtension($extension);
@@ -77,7 +77,7 @@ describe('Engine', function () {
             $merged = ['merged1' => 'value1', 'merged2' => 'value2', 'data' => 'value3'];
             $expected = 'expected';
 
-            $this->decorated->shouldReceive('render')->once()
+            $this->adapter->shouldReceive('render')->once()
                 ->with($name, $merged)
                 ->andReturn($expected);
 
@@ -95,7 +95,7 @@ describe('Engine', function () {
             $name = 'name';
             $data = ['data' => 'value'];
 
-            $this->decorated->shouldReceive('render')->once()
+            $this->adapter->shouldReceive('render')->once()
                 ->with($name, $data)
                 ->andThrow(new Exception);
 

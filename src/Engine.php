@@ -15,7 +15,7 @@ class Engine
      *
      * @var \Ellipse\Contracts\Templating\EngineAdapterInterface
      */
-    private $engine;
+    private $adapter;
 
     /**
      * The defaults values to use when rendering the template.
@@ -25,12 +25,14 @@ class Engine
     private $defaults = [];
 
     /**
-     * Set up a template engine decorator with the underlying template engine to
-     * decorate.
+     * Set up a template engine decorator with the given template engine
+     * adapter.
+     *
+     * @param \Ellipse\Contracts\Templating\EngineAdapterInterface $adapter
      */
-    public function __construct(EngineAdapterInterface $engine)
+    public function __construct(EngineAdapterInterface $adapter)
     {
-        $this->engine = $engine;
+        $this->adapter = $adapter;
     }
 
     /**
@@ -54,7 +56,7 @@ class Engine
      */
     public function registerNamespace(string $namespace, string $path): void
     {
-        $this->engine->registerNamespace($namespace, $path);
+        $this->adapter->registerNamespace($namespace, $path);
     }
 
     /**
@@ -66,7 +68,7 @@ class Engine
      */
     public function registerFunction(string $name, callable $cb): void
     {
-        $this->engine->registerFunction($name, $cb);
+        $this->adapter->registerFunction($name, $cb);
     }
 
     /**
@@ -78,7 +80,7 @@ class Engine
      */
     public function registerExtension($extension): void
     {
-        $this->engine->registerExtension($extension);
+        $this->adapter->registerExtension($extension);
     }
 
     /**
@@ -94,7 +96,7 @@ class Engine
 
         try {
 
-            return $this->engine->render($file, $merged);
+            return $this->adapter->render($file, $merged);
 
         }
 
